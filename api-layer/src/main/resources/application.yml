@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-layer
+
+app:
+  jwt:
+    # Dev-only default secret. NOT for production use — override via the
+    # JWT_SECRET environment variable (or app.jwt.secret property) in any
+    # real deployment. Must be >= 32 bytes for HS256.
+    secret: ${JWT_SECRET:dev-only-insecure-secret-key-change-me-1234567890}
+    expiration-ms: 3600000 # 1 hour
+  chat-layer:
+    base-url: ${CHAT_LAYER_BASE_URL:http://localhost:8081}
+  cors:
+    allowed-origin: ${FRONTEND_ORIGIN:http://localhost:3000}
+  ticket:
+    ttl-ms: 60000 # 60 seconds, single-use SSE ticket lifetime
+
+logging:
+  level:
+    com.example.apilayer: INFO

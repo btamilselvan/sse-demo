@@ -1,0 +1,175 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+.welcome {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.logoutButton {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: var(--surface);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+.statusDot[data-status="connecting"] {
+  background: #f0a500;
+}
+
+.statusDot[data-status="streaming"] {
+  background: #2f9e44;
+}
+
+.statusDot[data-status="error"] {
+  background: var(--danger);
+}
+
+.chatWindow {
+  flex: 1;
+  min-height: 320px;
+  max-height: 55vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--background);
+  margin-bottom: 12px;
+}
+
+.emptyHint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.userRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.assistantRow {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.errorRow {
+  display: flex;
+  justify-content: center;
+}
+
+.userBubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px 14px 2px 14px;
+  background: var(--user-bubble);
+  color: white;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.assistantBubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px 14px 14px 2px;
+  background: var(--assistant-bubble);
+  color: var(--foreground);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.errorBubble {
+  max-width: 90%;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--danger) 15%, transparent);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.composer {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.input:disabled {
+  opacity: 0.6;
+}
+
+.sendButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sendButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
